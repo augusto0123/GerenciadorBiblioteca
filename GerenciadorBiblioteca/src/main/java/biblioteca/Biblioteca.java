@@ -35,4 +35,8 @@ public class Biblioteca {
         }
         return contagemPorAutor;
     }
+
+    public Set<Livro> listarLivrosUnicos(){
+        return new HashSet<>(livros);
+    }
 }
