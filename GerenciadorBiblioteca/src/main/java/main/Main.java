@@ -57,5 +57,14 @@ public class Main {
                 System.out.println(String.format("Titulo: \"%s\", Autor: \"%s\", Ano de publicação: \"%d\"",
                         livro.getTitulo(), livro.getAutor(), livro.getAnoPublicacao())));
 
+        // Listagem de livros publicados antes de tal ano
+        System.out.print("\nDigite um ano para listar os livros publicados antes dele: ");
+        int anoInformado = scanner.nextInt();
+
+        biblioteca.listarLivrosAntesDe(anoInformado)
+                .forEach(livro -> System.out.println(
+                        String.format("Título: \"%s\", Autor: \"%s\", Ano de publicação: \"%d\"",
+                                livro.getTitulo(), livro.getAutor(), livro.getAnoPublicacao())));
+
     }
 }
