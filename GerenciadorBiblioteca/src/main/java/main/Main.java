@@ -6,6 +6,7 @@ import model.Livro;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args){
@@ -36,7 +37,7 @@ public class Main {
                         livro.getTitulo(), livro.getAutor(), livro.getAnoPublicacao())));
 
 
-        // Listagem de livros por ano de publicação
+        // Listagem de livros por ano de publicação em ordem crescente
         List<Livro> resultadoAno = biblioteca.listarLivrosPorAno();
 
         resultadoAno.forEach(livro ->
@@ -49,6 +50,12 @@ public class Main {
         contagemLivrosPorAutor.forEach(
                 (autor, contagem) ->
                         System.out.println("Autor: " + autor + " | N° de livros: " + contagem));
+
+        // Listagem de livros únicos
+        Set<Livro> livrosUnicos = biblioteca.listarLivrosUnicos();
+        livrosUnicos.forEach(livro ->
+                System.out.println(String.format("Titulo: \"%s\", Autor: \"%s\", Ano de publicação: \"%d\"",
+                        livro.getTitulo(), livro.getAutor(), livro.getAnoPublicacao())));
 
     }
 }
